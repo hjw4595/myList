@@ -1,10 +1,10 @@
 import React from 'react';
-import MyList from "./mylist";
+import TodoList from "./list";
 
 function App() {
   return (
     <div >
-      <MyList></MyList>
+      <TodoList></TodoList>
     </div>
   );
 }
