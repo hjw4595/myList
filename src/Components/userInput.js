@@ -12,13 +12,15 @@ const TodoInput = ({addItem}) => {
         }
     const onSubmit = event => {
         event.preventDefault();
-        addItem(item);
-        setItem("");
+        if(item.length > 0){
+            addItem(item);
+            setItem("");
+        }
     }
         return(
         <Container>
             <form onSubmit={onSubmit}>
-                <input placeholder="확인" value={item} onChange={onChange} />
+                <input placeholder="todo List" value={item} onChange={onChange} />
             </form>
         </Container>
         )

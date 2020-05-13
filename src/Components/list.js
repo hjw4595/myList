@@ -11,9 +11,6 @@ const MyList = () => {
         const addItem = inputItem =>{
             const addList = list.concat(inputItem)
             setList(addList)
-            if(inputItem){
-                return setList
-            }
         }
         const DeleteItem = id => {
             setList (list.filter(item => list[id] !== item))
