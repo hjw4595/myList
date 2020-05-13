@@ -9,16 +9,11 @@ const TodoInput = ({addItem}) => {
     const onChange = event => {
         const {target : {value}} = event;
             setItem(value);
-            if(item){
-                return {item, onChange}
-            }
         }
     const onSubmit = event => {
         event.preventDefault();
         addItem(item);
-        if(item){
-            return setItem("")
-        }
+        setItem("");
     }
         return(
         <Container>
