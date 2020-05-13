@@ -1,54 +1,49 @@
-import React from "react";
+import React , {useState} from "react";
 import styled from "styled-components";
-import ItemList from "./listITem";
-import UserInput from "./userInput";
+import ItemList from "./ListITem";
+import UserInput from "./UserInput";
 
 const Container = styled.div`
 `;
 
-class MyList extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            list : [],
-            item : ""
+const MyList = () => {
+        const [list , setList] = useState([]);
+        const addItem = inputItem =>{
+            const addList = list.concat(inputItem)
+            setList(addList)
+            if(inputItem){
+                return setList
+            }
         }
-    }
-    UpdateItem = event => {
-        const { target : { value } } = event;
-        this.setState({
-            updateItem : value
-        })
-     }
-    HandleSubmit = event =>{
-        event.preventDefault();
-        if(this.state.updateItem){
-            this.addItem(this.state.updateItem)
+
+    // UpdateItem = event => {
+    //     const { target : { value } } = event;
+    //     this.setState({
+    //         updateItem : value
+    //     })
+    //  }
+    // HandleSubmit = event =>{
+    //     event.preventDefault();
+    //     if(this.state.updateItem){
+    //         this.addItem(this.state.updateItem)
+    //     }
+    // }
+    // addItem = (newItem)=> {
+    //     const addItem = this.state.list
+    //     const addList = addItem.concat(newItem)
+    //     this.setState({
+    //        list : addList,
+    //     })
+    // }
+        const DeleteItem = id => {
+            setList (list.filter(item => list[id] !== item))
         }
-    }
-    addItem = (newItem)=> {
-        const addItem = this.state.list
-        const addList = addItem.concat(newItem)
-        this.setState({
-           list : addList,
-        })
-    }
-    DeleteItem = id => {
-        const list = this.state.list
-        const updateList = list.filter(item => list[id] !== item)
-    
-        this.setState({
-            list : updateList
-        }) 
-    }
-    render(){
         return( 
         <Container>
-            <UserInput userInputItem={this.state.item} UpdateItem={this.UpdateItem} HandleSubmit={this.HandleSubmit} />
-            <ItemList list={this.state.list} DeleteItem={this.DeleteItem}/>
+            <UserInput addItem={addItem} />
+            <ItemList list={list} DeleteItem={DeleteItem}/>
         </Container>
         )
-    }
 }
 
 export default MyList
