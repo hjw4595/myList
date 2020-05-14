@@ -6,7 +6,7 @@ const Container = styled.div`
 
 class ListItem extends React.Component{
     render(){
-        const { list , DeleteItem} = this.props
+        const { list , deleteItem} = this.props
         return( 
         <Container>
                 {list && list.length > 0 && (
@@ -14,7 +14,7 @@ class ListItem extends React.Component{
                     list.map((item, index) => 
                         <li key={index}>
                             {item}
-                            <button onClick={() => window.confirm("지우기 확인") && DeleteItem(index)}>delete</button>
+                            <button onClick={() => window.confirm("지우기 확인") && deleteItem(index)}>delete</button>
                         </li>)
                 }</ul>
             )}

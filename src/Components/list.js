@@ -1,24 +1,18 @@
-import React , {useState} from "react";
+import React , { useContext } from "react";
 import styled from "styled-components";
 import ItemList from "./ListITem";
 import UserInput from "./UserInput";
+import { todoListContext } from "./context";
 
 const Container = styled.div`
 `;
 
 const MyList = () => {
-        const [list , setList] = useState([]);
-        const addItem = inputItem =>{
-            const addList = list.concat(inputItem)
-            setList(addList)
-        }
-        const DeleteItem = id => {
-            setList (list.filter(item => list[id] !== item))
-        }
+        const {list , addTodoItem, deleteTodoItem} = useContext(todoListContext);
         return( 
         <Container>
-            <UserInput addItem={addItem} />
-            <ItemList list={list} DeleteItem={DeleteItem}/>
+            <UserInput addItem={addTodoItem} />
+            <ItemList list={list} deleteItem={deleteTodoItem}/>
         </Container>
         )
 }
