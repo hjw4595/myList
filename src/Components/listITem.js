@@ -11,9 +11,9 @@ class ListItem extends React.Component{
         <Container>
                 {list && list.length > 0 && (
                 <ul>{
-                    list.map((item, index) => 
+                    list.map((list , index)=> 
                         <li key={index}>
-                            {item}
+                            {list.item}
                             <button onClick={() => window.confirm("지우기 확인") && deleteItem(index)}>delete</button>
                         </li>)
                 }</ul>

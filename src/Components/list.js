@@ -8,7 +8,7 @@ const Container = styled.div`
 `;
 
 const MyList = () => {
-        const {list , addTodoItem, deleteTodoItem} = useContext(todoListContext);
+        const { list , addTodoItem, deleteTodoItem} = useContext(todoListContext);
         return( 
         <Container>
             <UserInput addItem={addTodoItem} />

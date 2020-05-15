@@ -5,9 +5,16 @@ export const todoListContext = React.createContext();
 const TodoContextProvider = ({ children }) => {
   const [ list, setList ] = useState([]);
 
-  const addTodoItem = inputItem => setList(list.concat(inputItem))
+  const addTodoItem = item => {
+    const newItem = {
+        item
+       }
+      setList(list.concat(newItem))
+    }
+    console.log(list)
+  
   const deleteTodoItem = id => {
-      const deletItem = list.filter(item => list[id] !== item)
+      const deletItem = list.filter(deleteitem => list[id] !== deleteitem)
       setList(deletItem)
   }
   return (
