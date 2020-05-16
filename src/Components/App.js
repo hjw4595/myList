@@ -1,11 +1,11 @@
 import React from 'react';
-import TodoList from "./List";
-import TodoContextProvider from "./context";
+import TodoList from "./TodoList";
+import TodoContextProvider from "../contexts/TodoList";
 
 function App() {
   return (
     <TodoContextProvider >
-      <TodoList></TodoList>
+      <TodoList />
     </TodoContextProvider>
   );
 }
