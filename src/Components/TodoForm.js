@@ -23,7 +23,7 @@ const TodoForm = ({ addTodoItem }) => {
 
     return (
         <Form onSubmit={onSubmitHandler}>
-            <Input value={inputValue} onChange={onChange} />
+            <Input value={inputValue} placeholder="Todo List 입력" onChange={onChange} />
         </Form>
     )
 }

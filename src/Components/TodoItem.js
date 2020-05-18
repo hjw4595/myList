@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button"
+import List from "./List";
 
 const TodoItem = ({ todoList, deleteTodoItem }) => {
   //TODO : 그냥 function 사용해서 커링 구현하기
@@ -13,20 +13,7 @@ const TodoItem = ({ todoList, deleteTodoItem }) => {
 
   }
   return (
-    <>
-      {(
-        <ul>{
-          todoList.map((TodoItem) =>
-          //TODO : key값이 왜 필요한지 알아보기 
-            <li key={TodoItem.id}>
-              {TodoItem.value}
-              <Button onClick={onDeleteTodoItemClick(TodoItem.id)}>
-                 <span role="img" aria-label="Delete">✖️</span>
-                 </Button>
-            </li>)
-        }</ul>
-      )}
-    </>
+    <List todoList={todoList} onDeleteTodoItemClick={onDeleteTodoItemClick}/>
   )
 }
 TodoItem.defaultProps = { todoList: [], deleteTodoItem: id => null }
