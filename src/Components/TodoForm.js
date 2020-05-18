@@ -9,7 +9,7 @@ const TodoForm = ({ addTodoItem }) => {
     function onSubmitHandler(event) {
         event.preventDefault();
         const newTodoItem = {
-            id: Math.random() + 1 * 1000,
+            id : 0,
             value: inputValue
         }
         addTodoItem(newTodoItem);

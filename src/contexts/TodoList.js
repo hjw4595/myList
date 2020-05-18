@@ -9,7 +9,7 @@ const TodoContextProvider = ({ children }) => {
    *   value : string
    * }
    */
-  const [todoList, setTodoList] = useState([{ id: 0, value: "" }]);
+  const [todoList, setTodoList] = useState([{ id: 0, value: "TodoList입니다" }]);
 
   /**
    * 투두아이템 추가
