@@ -16,8 +16,13 @@ const Image = styled.div`
 `;
 
 const BackImage = props => {
-    return (
-        <Image {...props}/>
-    )
+  return (
+    <>
+      {props.currentWeather && (
+        <Image
+          bgImage={require(`../assets/${props.currentWeather}.jpg`)}
+        />)}
+    </>
+  )
 }
 export default BackImage;

@@ -3,25 +3,25 @@ import TodoList from "./TodoList";
 import TodoContextProvider from "../contexts/TodoList";
 import Wheather from "./Weather/Weather";
 import styled from "styled-components";
-import BackImage from "./BackImage";
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  z-index:10;
 `;
 
 function App() {
   return (
-    <Container>
-      <BackImage 
-        bgImage={require("../assets/clouds.jpg")}
-      />
+    <>
       <Wheather />
-      <TodoContextProvider >
-        <TodoList />
-      </TodoContextProvider>
-    </Container>
+      <Container>
+        <TodoContextProvider >
+          <TodoList />
+        </TodoContextProvider>
+      </Container>
+    </>
   );
 }
 

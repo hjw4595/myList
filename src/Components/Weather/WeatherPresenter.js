@@ -2,19 +2,23 @@ import React from "react";
 import Loading from "../Loading";
 import styled from "styled-components";
 import Clock from "../Clock";
+import BackImage from "../BackImage";
+
 const WeatherText = styled.span`
 `;
 const WeatherPresenter = ({ result, loading, error }) =>
   loading ? (
-      <Loading />
+    <Loading />
   ) : (
       <>
-      <Clock />
-      <WeatherText>
+        <BackImage currentWeather={result.weather[0].id} />
+        <Clock />
+        <WeatherText>
           {result.weather[0].main}
           {result.weather[0].description}
-      </WeatherText>
+        </WeatherText>
       </>
-  );
+    );
+
 
 export default WeatherPresenter;
