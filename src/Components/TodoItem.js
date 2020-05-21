@@ -2,9 +2,9 @@ import React from "react";
 import List from "./List";
 
 const TodoItem = ({ todoList, deleteTodoItem }) => {
-  function onDeleteTodoItemClick(TodoItemId){
+  function onDeleteTodoItemClick(TodoItem){
     return function(event){
-      return window.confirm("지우기 확인") && deleteTodoItem(TodoItemId)
+      return window.confirm("지우기 확인") && deleteTodoItem(TodoItem)
     }
 
   }

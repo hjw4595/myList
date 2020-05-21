@@ -4,14 +4,16 @@ import Form from "./Form";
 
 const TodoForm = ({ addTodoItem }) => {
     const [inputValue, setInputValue] = useState("");
-
+    const [newItemId, setnewItemId] = useState(0);
     // 투두아이템 추가하고, inputValue초기화
     function onSubmitHandler(event) {
         event.preventDefault();
         const newTodoItem = {
-            id : 0,
+            id : newItemId,
             value: inputValue
         }
+        setnewItemId(newItemId + 1)
+        console.log(newItemId)
         addTodoItem(newTodoItem);
         setInputValue("")
     }

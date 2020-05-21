@@ -1,8 +1,12 @@
 import React from 'react';
 import TodoList from "./TodoList";
-import TodoContextProvider from "../contexts/TodoList";
-import Wheather from "./Weather/Weather";
+import Wheather from "./Weather/index";
 import styled from "styled-components";
+import Clock from "./Clock";
+import RootStore from "../mobx/index";
+import { Provider } from 'mobx-react';
+
+const root = new RootStore();
 
 const Container = styled.div`
   position: relative;
@@ -15,11 +19,12 @@ const Container = styled.div`
 function App() {
   return (
     <>
+      <Clock />
       <Wheather />
       <Container>
-        <TodoContextProvider >
+      <Provider {...root}>
           <TodoList />
-        </TodoContextProvider>
+        </Provider>
       </Container>
     </>
   );
