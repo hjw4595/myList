@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import Input from "./Input/index";
 import Form from "./Form/index";
-=======
-import Input from "./Input";
-import Form from "./Form";
->>>>>>> 0eb3d49253e81e84c59d4a27aa1a98a41681387a
 
 const TodoForm = ({ addTodoItem }) => {
     const [inputValue, setInputValue] = useState("");
@@ -18,7 +13,8 @@ const TodoForm = ({ addTodoItem }) => {
             value: inputValue,
             check: false,
             change : false
-        }
+        } 
+
         setnewItemId(newItemId + 1)
         addTodoItem(newTodoItem);
         setInputValue("")

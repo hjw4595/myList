@@ -1,15 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
 import Button from "./Button/index";
 import styled from "styled-components";
 import { observer , inject } from 'mobx-react';
 import ChangeItem from "./ChangeItem"
 import CheckTodo from './CheckItem';
-=======
-import Button from "./Button";
-import styled from "styled-components";
-import { observer } from 'mobx-react';
->>>>>>> 0eb3d49253e81e84c59d4a27aa1a98a41681387a
 
 const ItemList = styled.ul`
     list-style:none;

@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 const ChangeButton = styled.button`
-border-color: transparent;
-border: none;
-background-color: transparent;
-&:hover {
-    color: red;
-  }
+    border-color: transparent;
+    border: none;
+    background-color: transparent;
+    &:hover {
+        background-color: gray;
+    }
+`
+
+const CForm = styled.form`
+    display : inline;
+`
+const CInput = styled.input`
+    border: 0;
+    outline : 0;
 `
 const CurrentChange = ({ todoItem, currentChange, changeItem}) => {
     function changeCilck(id){
@@ -36,9 +44,9 @@ const CurrentChange = ({ todoItem, currentChange, changeItem}) => {
         return ( 
             <>
                     {todoItem.change ? 
-                    <form onSubmit={onSubmitHandler}> 
-                        <input onChange={onChange} value={changeInput}/>
-                    </form> :  
+                    <CForm onSubmit={onSubmitHandler}> 
+                        <CInput onChange={onChange} value={changeInput}/>
+                    </CForm> :  
                     <ChangeButton onClick={changeCilck(todoItem.id)}> {changeInput} </ChangeButton>}
             </>
         )

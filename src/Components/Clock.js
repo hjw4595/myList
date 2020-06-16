@@ -1,4 +1,9 @@
 import React from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+    margin: 0 30%; 
+`
 
 class Clock extends React.Component {
     constructor(props) {
@@ -17,11 +22,11 @@ class Clock extends React.Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 <h1>
                     {this.state.date.toLocaleString()}
                 </h1>
-            </div>
+            </Container>
         )
     }
 }
