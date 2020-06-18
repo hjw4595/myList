@@ -5,6 +5,7 @@ const TodoList = styled.input`
   all: unset;
   font-size: 28px;
   width: 100%;
+  &:focus {outline:2px solid skyblue;}
 `
 const Input = props => {
     return (

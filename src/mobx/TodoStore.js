@@ -12,17 +12,18 @@ export default class TodoStore {
     check : true,
     id : 999999,
     value : "TodoList입니다",
-    change : false
-    // date : 
+    change : false,
+    date : true,
   }];
     /**
    * 투두아이템 추가
    * @param todoItemo
    */
-  @action addTodoItem = ({ id, value }) => {
+  @action addTodoItem = ({ id, value, date}) => {
     const newTodoItem = {
       id,
-      value
+      value,
+      date
     }
     this.todoList.push(newTodoItem)
   }

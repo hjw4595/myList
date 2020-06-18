@@ -9,7 +9,7 @@ export default () => (
         <>
         <Header />
             <Switch>
-                <Route path="/" exact component={WeekTodo}/>
+                <Route path="/" component={WeekTodo}/>
                 <Route path="/Month" exact component={MonthTodo}/>
                 <Redirect from="*" to="/"/>
             </Switch>

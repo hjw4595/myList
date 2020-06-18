@@ -17,11 +17,11 @@ const Container = styled.div`
 @observer
 class TodoList extends React.Component  {
     render(){
-    const { todoList ,addTodoItem , deleteTodoItem } = this.props;
+    const { todoList ,addTodoItem , deleteTodoItem, location } = this.props;
     return (
         <Container>
-            <TodoForm addTodoItem={addTodoItem} />
-            <TodoItem todoList={todoList} deleteTodoItem={deleteTodoItem} />
+            <TodoForm addTodoItem={addTodoItem} location={location} />
+            <TodoItem todoList={todoList} deleteTodoItem={deleteTodoItem} location={location}/>
         </Container>
     )
     }

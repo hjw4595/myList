@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link, Route } from 'react-router-dom';
+import TodoList from "../TodoList";
 
 const Container = styled.div`
 display: flex;
@@ -44,8 +46,12 @@ margin: 5px;
   color: black;
 }
 `
+const ItmeLink = styled(Link)`
+  text-decoration:none;
+  color: skyblue;
+`
 class CalenderPresenter extends React.Component {
-  onDateClick = (index) => {
+  seleteDate = (index) => {
     console.log(this.props.week[index][1])
   }
       render(){
@@ -63,15 +69,14 @@ class CalenderPresenter extends React.Component {
                     {days[week[0]]}
                 </DaysHeader>
 
-                <DateButton onClick={() => this.onDateClick(index)}
+                <DateButton onClick={() => this.seleteDate}
                   today={new Date().getDate() === week[1].getDate() &&
                   new Date().getMonth() === week[1].getMonth()}>
-                  {week[1].getDate()}
+                  <ItmeLink to={`/${week[1].toLocaleDateString()}`}>{week[1].getDate()}</ItmeLink>
                 </DateButton>
-
               </DayLi>)}</DayUl>  
-
               <WeekButton onClick={onNextWeek}> ▶ </WeekButton>
+              <Route path={`/:id`} component={TodoList}/>
             </Container>          
 )}
 }

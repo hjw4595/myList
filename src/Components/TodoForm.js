@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Input from "./Input/index";
 import Form from "./Form/index";
 
-const TodoForm = ({ addTodoItem }) => {
+const TodoForm = ({ addTodoItem , location }) => {
     const [inputValue, setInputValue] = useState("");
     const [newItemId, setnewItemId] = useState(0);
-    // 투두아이템 추가하고, inputValue초기화
     function onSubmitHandler(event) {
         event.preventDefault();
         const newTodoItem = {
             id : newItemId,
             value: inputValue,
             check: false,
-            change : false
-        } 
+            change : false,
+            date : location.pathname
+        }
 
         setnewItemId(newItemId + 1)
         addTodoItem(newTodoItem);
@@ -26,9 +26,12 @@ const TodoForm = ({ addTodoItem }) => {
     }
 
     return (
+        <>
         <Form onSubmit={onSubmitHandler}>
-            <Input value={inputValue} placeholder="Todo List 입력" onChange={onChange} />
+            <p>{location.pathname} Todo입니다.</p>
+            <Input value={inputValue}  onChange={onChange} />
         </Form>
+        </>
     )
 }
 

@@ -21,20 +21,23 @@ const Item = styled.li`
 @observer
 class List extends React.Component {
     render(){
-        const {todoList , onDeleteTodoItemClick ,checkItem , currentChange ,changeItem} = this.props
+        const {location, todoList , onDeleteTodoItemClick ,checkItem , currentChange ,changeItem} = this.props
     return (
             <ItemList>{
             todoList.map((todoItem) =>
                 <Item key={todoItem.id}>
+                    {location.pathname === todoItem.date ? 
+                    <>
                     <CheckTodo todoItem={todoItem} checkItem={checkItem}/>
                     <ChangeItem todoItem={todoItem} currentChange={currentChange} changeItem={changeItem}/>
                         <Button onClick={onDeleteTodoItemClick(todoItem.id)}>
                             <span role="img" aria-label="Delete">✖️</span>
                         </Button>
-                </Item>
+                    </> : ""}</Item> 
                 )
             }</ItemList>
     )
-}
-}
+        }
+    }
+
 export default List

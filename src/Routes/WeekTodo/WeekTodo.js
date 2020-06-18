@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import TodoList from "../../Components/TodoList";
 import Wheather from "../../Components/Weather";
 import Clock from "../../Components/Clock";
 import Calendar from "../../Components/Calendar";
@@ -9,7 +8,7 @@ import { Provider } from 'mobx-react';
 
 const root = new RootStore();
 const Container = styled.div`
-width: 95%; 
+width: 95%;
 margin-left : auto;
 `;
 const TodoContainer = styled.div`
@@ -41,8 +40,6 @@ function WeekTodo() {
           <CalendarContainer>
             <Calendar />
           </CalendarContainer>
-
-          <TodoList />
         </Provider>
       </TodoContainer>
       </Container>
