@@ -11,7 +11,7 @@ export default class TodoStore {
   @observable todoList = [{
     check : true,
     id : 999999,
-    value : "TodoList입니다",
+    value : "누르면 수정가능",
     change : false,
     date : true,
   }];
@@ -30,7 +30,7 @@ export default class TodoStore {
 
     /**
    * 아이템 삭제 
-   * @param item number
+   * @param id number
    */
   @action deleteTodoItem = id => {
     const deleltItem = this.todoList.filter(item => item.id !== id);
@@ -38,7 +38,7 @@ export default class TodoStore {
   }
     /**
    * 아이템 체크 
-   * @param item number
+   * @param id number
    */
   @action checkItem = id => {
     const checkItem = this.todoList.map(item => item.id === id ? {...item, check : !item.check} : item )
@@ -46,7 +46,7 @@ export default class TodoStore {
 }
     /**
    * 아이템 수정 확인 
-   * @param item number
+   * @param id number
    */
   @action currentChange = id => {
     const currentChangeItem = this.todoList.map(item => item.id === id ? {...item,  change : !item.change} : item )
@@ -54,7 +54,7 @@ export default class TodoStore {
   }
     /**
    * 아이템 수정 
-   * @param item number
+   * @param item 
    */
   @action changeItem = change => {
     const changeTodoItem = this.todoList.map(item => item.id === change.id ? 

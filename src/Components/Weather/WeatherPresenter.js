@@ -5,6 +5,7 @@ import BackImage from "../BackImage";
 import weatherCases from "./WeatherCase";
 
 const Container = styled.div`
+  margin-left: auto;
 `;
 const WeatherText = styled.a`
 color : ${props => props.color.color}

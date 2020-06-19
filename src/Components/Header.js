@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, withRouter} from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import styled from "styled-components";
 
 const List = styled.ul`
@@ -24,16 +24,16 @@ const Hlink = styled(Link)`
     text-decoration: none;
     color : white;
 `;
-export default withRouter(({location : {pathname} }) => (
-    <Header> 
-        <List>
-            <Item selected ={pathname ==="/"}> 
-                <Hlink to="/">Week</Hlink>
-            </Item>
-            <Item selected ={pathname ==="/Month"}>
-                <Hlink to="/Month">Month</Hlink>
-            </Item>
-        </List>
-    </Header>
-    )
+export default withRouter(({ location: { pathname } }) => (
+  <Header>
+    <List>
+      <Item selected={pathname === "/TodoList"}>
+        <Hlink to="/TodoList">Week</Hlink>
+      </Item>
+      <Item selected={pathname === "/Month"}>
+        <Hlink to="/Month">Month</Hlink>
+      </Item>
+    </List>
+  </Header>
+)
 )
