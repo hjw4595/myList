@@ -26,7 +26,7 @@ class List extends React.Component {
       <ItemList>{
         todoList.map((todoItem) =>
           <Item key={todoItem.id}>
-            {location.pathname === todoItem.date || todoItem.date === true ?
+            {location.pathname === todoItem.date ?
               <>
                 <CheckTodo todoItem={todoItem} checkItem={checkItem} />
                 <ChangeItem todoItem={todoItem} currentChange={currentChange} changeItem={changeItem} />

@@ -6,7 +6,7 @@ const TodoList = styled.input`
   font-size: 28px;
   width: 100%;
   background-color : white;
-  op
+  opacity: 0.3;
   &:focus {outline:2px solid skyblue;}
 `
 const Input = props => {

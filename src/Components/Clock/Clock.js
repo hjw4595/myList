@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div` 
-  align-items: center;
+  margin-left: 35%;
 `
 
 class Clock extends React.Component {

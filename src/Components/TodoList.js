@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react';
 import styled from "styled-components";
 
 const Container = styled.div`
-    margin-left : 10px;
+    margin-left : 10px ;
     flex-direction: colum;
 `
 @inject(stores => ({
@@ -19,11 +19,10 @@ class TodoList extends React.Component  {
     render(){
     const { todoList ,addTodoItem , deleteTodoItem, location } = this.props;
     return (
-        <Container>
-            <TodoForm addTodoItem={addTodoItem} location={location} />
-            <TodoItem todoList={todoList} deleteTodoItem={deleteTodoItem} location={location}/>
-        </Container>
-    )
+      <Container>
+        <TodoForm addTodoItem={addTodoItem} location={location} />
+        <TodoItem todoList={todoList} deleteTodoItem={deleteTodoItem} location={location}/>
+      </Container>)
     }
 }
 

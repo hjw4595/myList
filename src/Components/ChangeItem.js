@@ -31,7 +31,7 @@ const CurrentChange = ({ todoItem, currentChange, changeItem }) => {
     const updateTodoItem = {
       id: todoItem.id,
       value: changeInput,
-      change: false
+      itemUpdated: false
     }
     changeItem(updateTodoItem)
     setChangeInput(changeInput)
@@ -43,7 +43,7 @@ const CurrentChange = ({ todoItem, currentChange, changeItem }) => {
   }
   return (
     <>
-      {todoItem.change ?
+      {todoItem.itemUpdated ?
         <CForm onSubmit={onSubmitHandler}>
           <CInput onChange={onChange} value={changeInput} />
         </CForm> :

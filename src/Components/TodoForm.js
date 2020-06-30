@@ -11,7 +11,7 @@ const TodoForm = ({ addTodoItem , location }) => {
             id : newItemId,
             value: inputValue,
             check: false,
-            change : false,
+            itemUpdated : false,
             date : location.pathname
         }
 

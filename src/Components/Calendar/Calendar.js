@@ -34,10 +34,10 @@ class Calendar extends React.Component {
       date: newDate, week: newWeek
     })
   };
+  
   render() {
     return (
       <>
-      {console.log(this.props)}
         {this.state ? <CalendarPresenter
           week={this.state.week}
           date={this.state.date}

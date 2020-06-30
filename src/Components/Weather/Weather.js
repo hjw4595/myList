@@ -1,5 +1,5 @@
 import React from "react";
-import { SeoulWeather } from "../../api/Weather";
+import { getWeatherApi } from "../../api/weather";
 import WeatherPresenter from "./WeatherPresenter";
 
 export default class extends React.Component {
@@ -13,7 +13,7 @@ export default class extends React.Component {
   async componentDidMount() {
     let result = null;
     try {
-      ({ data: result } = await SeoulWeather());
+      ({ data: result } = await getWeatherApi());
     } catch {
       this.setState({ error: "Can't find anything." });
     } finally {

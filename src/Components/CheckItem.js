@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CheckTodo = ({ todoItem, checkItem }) => {
+const CheckItem = ({ todoItem, checkItem }) => {
     function checkClick(id){
         return function(event){
           return checkItem(id)
@@ -11,6 +11,6 @@ const CheckTodo = ({ todoItem, checkItem }) => {
                {todoItem.check ? "✅" : "☑"}
         </span>
     )
-}
+}           
 
-export default CheckTodo;
+export default CheckItem;        

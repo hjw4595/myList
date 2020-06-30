@@ -1,20 +1,20 @@
 import React from "react";
-import Loading from "../Loading";
+import Loading from "../Loading/Loading";
 import styled from "styled-components";
-import BackImage from "../BackImage";
+import BackImage from "../BackImage/BackImage";
 import weatherCases from "./WeatherCase";
 
 const Container = styled.div`
-  margin-left: auto;
+  margin-left: 25%;
 `;
 const WeatherText = styled.a`
-color : ${props => props.color.color}
+color : ${props => props.color.color};
 `;
 
 const WeatherTemp = styled.div`
   display : flex;
   flex-direction: column;
-  align-items: flex-end
+  align-items: flex-end;
 `;
 const MainTemp = styled.span`
   font-size : 25px;

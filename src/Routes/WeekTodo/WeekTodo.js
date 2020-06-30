@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
 import Wheather from "../../Components/Weather";
-import Clock from "../../Components/Clock";
+import Clock from "../../Components/Clock/Clock";
 import Calendar from "../../Components/Calendar";
 import RootStore from "../../mobx";
 import { Provider } from 'mobx-react';
 
 const root = new RootStore();
 const Container = styled.div`
-width: 95%;
-margin-left : auto;
+  height: 100%;
+  margin-top : 50px;
 `;
 const TodoContainer = styled.div`
   position: relative;
@@ -29,19 +29,19 @@ const TodoListHeader = styled.div`
 function WeekTodo() {
   return (
     <>
-   <Container>
-      <TodoListHeader>
-        <Clock />
-        <Wheather />
-      </TodoListHeader>
+      <Container>
+        <TodoListHeader>
+          <Clock />
+          <Wheather />
+        </TodoListHeader>
 
-      <TodoContainer>
-        <Provider {...root}>
-          <CalendarContainer>
-            <Calendar />
-          </CalendarContainer>
-        </Provider>
-      </TodoContainer>
+        <TodoContainer>
+          <Provider {...root}>
+            <CalendarContainer>
+              <Calendar />
+            </CalendarContainer>
+          </Provider>
+        </TodoContainer>
       </Container>
     </>
   );

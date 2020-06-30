@@ -17,7 +17,7 @@ padding : 5px 0 ;
 
 const DaysHeader = styled.span`
 padding-right : 10px;
-color : ${props => props.sunday ? "red" : "black"}
+color : ${props => props.sunday ? "red" : "black"};
 `
 
 const DateButton = styled.button`
@@ -68,10 +68,9 @@ class CalenderPresenter extends React.Component {
           </DaysHeader>
 
           <DateButton onClick={() => this.seleteDate}
-            today={new Date().getDate() === week[1].getDate() &&
-              new Date().getMonth() === week[1].getMonth()}>
+            today={new Date().getDate() === week[1].getDate() && new Date().getMonth() === week[1].getMonth()}>
 
-            <ItmeLink 
+            <ItmeLink
               today={new Date().getDate() === week[1].getDate() && new Date().getMonth() === week[1].getMonth()}
               to={`/TodoList/${week[1].toLocaleDateString()}`}>
                 {week[1].getDate()}

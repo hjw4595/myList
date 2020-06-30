@@ -5,15 +5,16 @@ export default class TodoStore {
       /**
    * todoItem : {
    *   id : number,
-   *   value : string
+   *   value : string,
+   *   date : Date,
    * }
    */
   @observable todoList = [{
     check : true,
     id : 999999,
     value : "누르면 수정가능",
-    change : false,
-    date : true,
+    itemUpdated : false,
+    date : undefined,
   }];
     /**
    * 투두아이템 추가
@@ -49,18 +50,18 @@ export default class TodoStore {
    * @param id number
    */
   @action currentChange = id => {
-    const currentChangeItem = this.todoList.map(item => item.id === id ? {...item,  change : !item.change} : item )
+    const currentChangeItem = this.todoList.map(item => item.id === id ? {...item,  itemUpdated : !item.change} : item )
     this.todoList.replace(currentChangeItem);
   }
     /**
    * 아이템 수정 
-   * @param item 
+   * @param itemUpdated 
    */
-  @action changeItem = change => {
-    const changeTodoItem = this.todoList.map(item => item.id === change.id ? 
+  @action changeItem = itemUpdated => {
+    const changeTodoItem = this.todoList.map(item => item.id === itemUpdated.id ? 
       {...item,
         value : item.value, 
-        change : false} : item )
+        itemUpdated : false} : item )
     this.todoList.replace(changeTodoItem);
   }
 }
