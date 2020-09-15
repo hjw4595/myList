@@ -15,7 +15,7 @@ const todoItems = [
 describe("CheckItem", () => {
   const checkItem = jest.fn(() => true)
   const { getByText } = render(<CheckItem todoItem={todoItems[1]} checkItem={checkItem}/>);
-  it("체크박스를 누르면 체크가 되어야 한다", () => {
+  it("체크박스를 누르면 함수가 호출이 되어야 한다", () => {
     const Button = getByText("☑");
     fireEvent.click(Button);
     expect(checkItem.mock.calls.length).toBe(1);

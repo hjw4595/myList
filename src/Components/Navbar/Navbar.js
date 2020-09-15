@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const List = styled.ul`
   display: flex;
+  list-style:none;
 `
 const Item = styled.li`
     width: 80px;
@@ -34,6 +35,7 @@ const Hlink = styled(Link)`
   color : white;
   text-decoration: none;
 `;
+
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>

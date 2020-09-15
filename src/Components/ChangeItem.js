@@ -9,7 +9,6 @@ const ChangeButton = styled.button`
         background-color: gray;
     }
 `
-
 const CForm = styled.form`
     display : inline;
 `

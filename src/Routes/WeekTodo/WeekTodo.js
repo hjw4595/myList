@@ -5,6 +5,8 @@ import Clock from "../../Components/Clock/Clock";
 import Calendar from "../../Components/Calendar";
 import RootStore from "../../mobx";
 import { Provider } from 'mobx-react';
+import {Helmet} from "react-helmet";
+import ListAltIcon from '@material-ui/icons/ListAlt';
 
 const root = new RootStore();
 const Container = styled.div`
@@ -29,6 +31,11 @@ const TodoListHeader = styled.div`
 function WeekTodo() {
   return (
     <>
+    <Helmet>
+      <ListAltIcon />
+      <meta charSet="utf-8" />
+      <title>Weekly</title>
+    </Helmet>
       <Container>
         <TodoListHeader>
           <Clock />

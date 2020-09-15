@@ -25,10 +25,12 @@ const TodoForm = ({ addTodoItem , location }) => {
         setInputValue(value)
     }
 
+    const pathname = location.pathname.split( '/' );
+    const selectDate = pathname[2].toString()
     return (
         <>
         <Form onSubmit={onSubmitHandler}>
-            <p>{location.pathname} Todo입니다.</p>
+            <p>{selectDate} Todo입니다.</p>
             <Input value={inputValue}  onChange={onChange} />
         </Form>
         </>

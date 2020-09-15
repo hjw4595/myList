@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react';
 import styled from "styled-components";
 
 const Container = styled.div`
-    margin-left : 10px ;
+    margin-left: 10px;
     flex-direction: colum;
 `
 @inject(stores => ({
