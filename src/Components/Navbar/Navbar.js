@@ -10,7 +10,7 @@ const Item = styled.li`
     width: 80px;
     height: 50px;
     text-align: center;
-    border-bottom:3px solid ${props => props.selected ? "green" : "transparent"};
+    background-color:${props => props.selected ? "green" : "transparent"};
     color: ${props => props.selected ? "green" : "white"};
     transition: border-bottom, color .5s ease-in-out;
 `;
@@ -39,10 +39,10 @@ const Hlink = styled(Link)`
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
-      <Item selected={pathname === "/TodoList"}>
+      <Item selected={pathname.split( '/' )[1] === "TodoList"}>
         <Hlink to="/TodoList">Week</Hlink>
       </Item>
-      <Item selected={pathname === "/Month"}>
+      <Item selected={pathname.split( '/' )[1] === "/Month"}>
         <Hlink to="/Month">Month</Hlink>
       </Item>
     </List>
