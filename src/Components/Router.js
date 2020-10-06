@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
-import MonthTodo from "../Routes/MonthTodo";
+import Achievement from "../Routes/Achievement";
 import WeekTodo from "../Routes/WeekTodo";
 
 export default () => (
@@ -10,7 +10,7 @@ export default () => (
       <Navbar />
       <Switch>
         <Route path="/TodoList" component={WeekTodo} />
-        <Route path="/Month" exact component={MonthTodo} />
+        <Route path="/Achievement" exact component={Achievement} />
         <Redirect from="*" to="/TodoList" />
       </Switch>
     </>
